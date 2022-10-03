@@ -71,7 +71,7 @@ namespace PPDBDavidLindgrenKamaliBackEnd
 
         public static string DeleteVehicle(string inputReg)
         {
-
+            
             SqlConnection con = CreateSQL();
 
             try
@@ -98,7 +98,7 @@ namespace PPDBDavidLindgrenKamaliBackEnd
                         SqlCommand vehicleReceipt = new SqlCommand("Top1_ParkingHistory", con);
                         vehicleReceipt.CommandType = CommandType.StoredProcedure;
                         vehicleReceipt.Parameters.AddWithValue("@Regnumber", inputReg);
-
+                       
                         SqlDataReader reader = vehicleReceipt.ExecuteReader();
 
                         using (reader)
@@ -112,6 +112,7 @@ namespace PPDBDavidLindgrenKamaliBackEnd
                                 stringArray[4] = reader.GetDateTime(4).ToString();
                                 stringArray[5] = reader.GetInt32(5).ToString();
                                 stringArray[6] = reader.GetInt32(5).ToString();
+
                             }
 
                             return $"ReceiptID: {stringArray[0]}\nREGNUMBER: {stringArray[1]}\nVehicleType: {stringArray[2]}\nCheckIn Time: {stringArray[3]}\n" +
@@ -276,6 +277,7 @@ namespace PPDBDavidLindgrenKamaliBackEnd
                         stringArray[4] = reader.GetDateTime(4).ToString();
                         stringArray[5] = reader.GetInt32(5).ToString();
                         stringArray[6] = reader.GetInt32(6).ToString();
+
                         string tempParkHistory = $"HistoryID: {stringArray[0]}\nREGNUMBER: {stringArray[1]}\nVehicleType: {stringArray[2]}\nVehicle CheckIn Time: {stringArray[3]}\nVehicle CheckOut Time: {stringArray[4]}\nHours Parked: {stringArray[5]}\nCost: {stringArray[6]}";
 
                         stringReturnList.Add(tempParkHistory);

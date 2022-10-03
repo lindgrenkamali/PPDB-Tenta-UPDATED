@@ -10,7 +10,7 @@ SET @count = @count + 1
 end
 
 insert into dbo.VehicleTypes (VehicleTypeID, VehicleType)
-values(1, 'Car')
+values(2, 'Car')
 
 insert into dbo.VehicleTypes (VehicleTypeID, VehicleType)
-values(2, 'MC')
+values(1, 'MC')

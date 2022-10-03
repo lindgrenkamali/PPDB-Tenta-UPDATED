@@ -99,8 +99,6 @@ namespace PPDBDavidLindgrenKamaliFrontEnd
                         else
                         {
 
-
-
                             foreach (var vehicle in arrayOutput)
                             {
                                 if (vehicle != null)

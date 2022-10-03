@@ -10,9 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="PPDBDavidLindgrenKamaliBackEnd">
-      <HintPath>..\..\PPDBDavidLindgrenKamaliBackEnd\PPDBDavidLindgrenKamaliBackEnd\bin\Debug\PPDBDavidLindgrenKamaliBackEnd.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\PPDBDavidLindgrenKamaliBackEnd\PPDBDavidLindgrenKamaliBackEnd\PPDBDavidLindgrenKamaliBackEnd.csproj" />
   </ItemGroup>
 
 </Project>
