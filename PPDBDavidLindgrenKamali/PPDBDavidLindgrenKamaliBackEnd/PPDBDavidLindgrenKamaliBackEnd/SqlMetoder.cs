@@ -14,7 +14,7 @@ namespace PPDBDavidLindgrenKamaliBackEnd
 
         public static SqlConnection CreateSQL()
         {
-            SqlConnection con = new SqlConnection("Data Source=(local); Initial Catalog=PPDBDavidLindgrenKamali; Integrated Security=SSPI");
+            SqlConnection con = new SqlConnection("Data Source=localhost\\SQLEXPRESS; Initial Catalog=PPDBDavidLindgrenKamali; Integrated Security=SSPI");
 
             return con;
         }
@@ -50,7 +50,7 @@ namespace PPDBDavidLindgrenKamaliBackEnd
                         return $"The vehicle with REGNUMBER: {inputReg} couldn't be added, since there already exist one with the same REGNUMBER.";
                     }
 
-                    else if ((int)returnValue.Value == 1)
+                    else if ((int)returnValue.Value == -1)
                     {
                         return $"The vehicle couldn't be added since all parkinglots are filled.";
                     }
@@ -62,9 +62,9 @@ namespace PPDBDavidLindgrenKamaliBackEnd
 
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                return $"There was a problem with the database.";
+                return $"There was a problem with the database: {ex}";
             }
 
         }
@@ -121,11 +121,9 @@ namespace PPDBDavidLindgrenKamaliBackEnd
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                {
-                    return $"There was a problem with the database.";
-                }
+                return $"There was a problem with the database: {ex}";
             }
 
         }
@@ -160,7 +158,10 @@ namespace PPDBDavidLindgrenKamaliBackEnd
                     }
                 }
             }
-            catch { return $"There was a problem with the database."; }
+            catch (Exception ex)
+            {
+                return $"There was a problem with the database: {ex}";
+            }
         }
 
 
@@ -245,9 +246,9 @@ namespace PPDBDavidLindgrenKamaliBackEnd
                     return result = "No vehicle with that REGNUMBER exists";
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                return "Something went wrong with the database.";
+                return $"There was a problem with the database: {ex}";
             }
         }
 
