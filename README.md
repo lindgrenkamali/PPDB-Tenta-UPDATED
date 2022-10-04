@@ -2,8 +2,8 @@
 
 # Code
 * C#
-# SQL
-# ADO.NET
+* SQL
+* ADO.NET
 
 # Tables
 * Vehicle
